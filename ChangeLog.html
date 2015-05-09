@@ -25,7 +25,8 @@
 </head>
 <body>
     <script type="text/javascript">
-		var viewModel
+        var viewModel
+
         $(document).ready(function () {
 			viewModel = dataBind()
 			$('#btnGo').on('click', function() {
@@ -61,6 +62,8 @@
 				success: showCommits,
 				error: function() {
 				    viewModel.commits([])
+				    viewModel.openIssues([])
+                    viewModel.closedIssues([])
 					alert("Unable to connect to repo '" + viewModel.gitRepoUrl() +"'")
 					}
 			})
